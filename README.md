@@ -41,7 +41,7 @@ We are going to run a couple SQL queries and put the answers in the "Query Respo
 1. Sums
 SELECT state, SUM(user_id)
 FROM usersAddress
-WHERE state='CT' OR state='AK' OR state='TX' OR state='WY'
+WHERE state IN ('CT', 'AK', 'TX', 'WY')
 GROUP BY state
   # state, SUM(user_id)
     'AK', '1422'
