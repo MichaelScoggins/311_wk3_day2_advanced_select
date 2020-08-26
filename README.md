@@ -60,6 +60,16 @@ GROUP BY state
 
 3.
 # MIN(first_name), county, tally
+SELECT 
+	MIN(first_name),
+	county,
+    count(*) AS tally
+FROM users
+JOIN usersAddress
+WHERE users.id=usersAddress.user_id
+GROUP BY county 
+HAVING tally > 10
+
 'An', 'Cook', '13'
 'Alecia', 'Los Angeles', '18'
 'Andra', 'New York', '14'
